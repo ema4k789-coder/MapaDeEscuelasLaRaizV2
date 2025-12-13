@@ -193,22 +193,22 @@
       .agrupacion { font-size: 1.2em; margin-top: 6px; }
       
       /* Ajustar posición de textos */
-      .splash-texts-container .splash-title {
-        font-size: 1.6em;
-        top: 60%;
-        width: 95%;
-      }
-      .splash-texts-container .splash-subtitle {
-        font-size: 1.1em;
-        top: 68%;
-        max-width: 90%;
-      }
+       .splash-texts-container .splash-title {
+         font-size: 1.6em;
+         top: 65%;
+         width: 95%;
+       }
+       .splash-texts-container .splash-subtitle {
+         font-size: 1.1em;
+         top: 73%;
+         max-width: 90%;
+       }
       
       /* Ajustar botón */
-      .btn-container {
-        bottom: 8%;
-        width: 220px;
-      }
+       .btn-container {
+         bottom: 5%;
+         width: 220px;
+       }
       .splash-texts-container .splash-btn {
         font-size: 0.9em;
         padding: 12px 10px;
@@ -244,9 +244,9 @@
         font-size: 0.9em;
         max-width: 280px;
         padding: 15px;
-        top: 15%;
+        top: 45%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
       }
     }
     
@@ -260,18 +260,18 @@
       .agrupacion { font-size: 1em; }
       
       .splash-texts-container .splash-title {
-        font-size: 1.4em;
-        top: 58%;
-      }
-      .splash-texts-container .splash-subtitle {
-        font-size: 1em;
-        top: 66%;
-      }
+         font-size: 1.4em;
+         top: 63%;
+       }
+       .splash-texts-container .splash-subtitle {
+         font-size: 1em;
+         top: 71%;
+       }
       
       .btn-container {
-        bottom: 6%;
-        width: 200px;
-      }
+         bottom: 3%;
+         width: 200px;
+       }
       
       #flagContainer {
         width: 280px;
@@ -287,6 +287,8 @@
         font-size: 0.85em;
         max-width: 250px;
         padding: 12px;
+        top: 45%;
+        transform: translate(-50%, -50%);
       }
     }
   </style>
@@ -354,7 +356,7 @@
       <button class="splash-btn" id="startBtn" onclick="try{ startApp(); }catch(e){ try{ var s=document.getElementById('splash'); var m=document.getElementById('mainApp'); if(s) s.style.display='none'; if(m) m.style.display='block'; setTimeout(function(){ try{ map.invalidateSize(); }catch(_){ } }, 200); }catch(_){ } }"><span>Realice su consulta</span></button>
     </div>
   </div>
-    <div id="easterEgg" style="display:none;position:fixed;top:20%;left:50%;transform:translate(-50%,0);width:240px;height:240px;background:#fff;border-radius:50%;box-shadow:0 0 40px 8px #fff8, 0 8px 32px #0006;z-index:2000;align-items:center;justify-content:center;color:#222;pointer-events:none;overflow:hidden;">
+    <div id="easterEgg" style="display:none;position:fixed;top:40%;left:50%;transform:translate(-50%,-50%);width:240px;height:240px;background:#fff;border-radius:50%;box-shadow:0 0 40px 8px #fff8, 0 8px 32px #0006;z-index:2000;align-items:center;justify-content:center;color:#222;pointer-events:none;overflow:hidden;">
       <div style="display:grid;place-items:center;box-sizing:border-box;width:92%;height:92%;padding:0 10px;text-align:center;font-weight:bold;font-size:1.4em;letter-spacing:0.6px;gap:8px;line-height:1.2;color:#d0002a;text-shadow:0 2px 10px rgba(0,0,0,0.25),0 1px 4px rgba(255,255,255,0.6);">
         <div style="display:flex;align-items:center;justify-content:center;gap:10px;">
           <span>😊</span>
@@ -421,19 +423,19 @@
     (function(){ var clickCount=0; var hideTimer=null; var circle=document.querySelector('.circle-bounce'); var btn=document.getElementById('startBtn'); function isOutside(t){ return !(circle&&circle.contains(t)) && !(btn&&btn.contains(t)); } function isInSplash(){ return window.inSplashScreen!==false; } function showEgg(){ var egg=document.getElementById('easterEgg'); if(!egg) return; egg.style.display='flex'; if(hideTimer) clearTimeout(hideTimer); hideTimer=setTimeout(function(){ egg.style.display='none'; }, 4000); } function showFlag(){ var flag=document.getElementById('flagContainer'); var circle=document.querySelector('.circle-bounce'); if(!flag || !circle) return; circle.style.display='none'; flag.style.display='block'; 
       // Detectar si es móvil
       var isMobile = window.innerWidth <= 600;
-      if(isMobile) {
-        // Posición optimizada para móvil
-        flag.style.bottom='30%';
-        flag.style.left='50%';
-        flag.style.transform='translate(-50%, 0)';
-        flag.style.top='auto';
-      } else {
-        // Posición original para desktop
-        flag.style.bottom='39%';
-        flag.style.left='50%';
-        flag.style.transform='translate(-50%, 0)';
-        flag.style.top='auto';
-      }
+       if(isMobile) {
+         // Posición optimizada para móvil - más arriba
+         flag.style.bottom='35%';
+         flag.style.left='50%';
+         flag.style.transform='translate(-50%, 0)';
+         flag.style.top='auto';
+       } else {
+         // Posición original para desktop - más arriba
+         flag.style.bottom='45%';
+         flag.style.left='50%';
+         flag.style.transform='translate(-50%, 0)';
+         flag.style.top='auto';
+       }
       if(hideTimer) clearTimeout(hideTimer); } function hideFlag(){ var flag=document.getElementById('flagContainer'); var circle=document.querySelector('.circle-bounce'); if(!flag || !circle) return; flag.style.display='none'; circle.style.display='flex'; if(hideTimer) clearTimeout(hideTimer); } document.addEventListener('click', function(e){ if(!isInSplash()) return; if(isOutside(e.target)){ clickCount++; if(clickCount>=7){ clickCount=0; showEgg(); } } else { clickCount=0; } }, true); var circleElement=document.querySelector('.circle-bounce'); if(circleElement){ circleElement.addEventListener('dblclick', function(e){ if(!isInSplash()) return; e.stopPropagation(); showFlag(); }); } var flagElement=document.getElementById('flagContainer'); if(flagElement){ flagElement.addEventListener('click', function(e){ e.stopPropagation(); hideFlag(); }); } })();
     document.getElementById('startBtn').addEventListener('click', startApp);
     
