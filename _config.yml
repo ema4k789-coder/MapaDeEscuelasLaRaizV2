@@ -1,8 +1,4 @@
-# Configuración de GitHub Pages
-theme: jekyll-theme-minimal
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-
-# Configuración para servir index.html como página principal
-index: index.html
+exclude:
+  - README.md
+  - .gitignore
+  - .github/workflows/pages.yml
