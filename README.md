@@ -4,7 +4,7 @@ Una aplicación web interactiva que muestra la ubicación de escuelas en La Plat
 
 ## 🌐 Demo Online
 
-Puedes ver la aplicación funcionando en: **https://ema4k789-coder.github.io/MapaDeEscuelasLaRaizV1/**
+Puedes ver la aplicación funcionando en: **https://ema4k789-coder.github.io/MapaDeEscuelasLaRaizV2/**
 
 ## ✨ Características
 
@@ -50,11 +50,19 @@ Puedes ver la aplicación funcionando en: **https://ema4k789-coder.github.io/Map
 ```
 ├── index.html              # Página principal
 ├── app.js                  # Lógica de la aplicación
+├── enhancements.js         # Mejoras de interfaz y PWA
+├── service-worker.js       # Caché offline
+├── manifest.webmanifest    # Manifest PWA
 ├── style.css               # Estilos
 ├── leaflet.js/.css         # Biblioteca de mapas
 ├── camposfiltrados.geojson # Datos de escuelas
+├── recorridos_lp.geojson   # Recorridos de La Plata
 ├── localidades_*.geojson   # Datos de localidades
+├── El_Rincon.geojson, Ignacio_correas.geojson,
+│   Los_porteños.geojson, Villa_castells.geojson,
+│   Villa_Garibaldi.geojson # Localidades extra
 ├── municipios_boundaries.geojson # Límites municipales
+├── qrcode.min.js           # Generador de QR
 ├── CooperBlackCustom.otf   # Fuente personalizada
 ├── CalibriCustom.TTF       # Fuente personalizada
 └── pizarron.png           # Imagen para popups
@@ -66,12 +74,12 @@ Si quieres ejecutar la aplicación localmente:
 
 1. **Clona el repositorio**
    ```bash
-   git clone https://github.com/ema4k789-coder/MapaDeEscuelasLaRaizV1.git
+   git clone https://github.com/ema4k789-coder/MapaDeEscuelasLaRaizV2.git
    ```
 
 2. **Navega al directorio**
    ```bash
-   cd MapaDeEscuelasLaRaizV1
+   cd MapaDeEscuelasLaRaizV2
    ```
 
 3. **Inicia un servidor local**

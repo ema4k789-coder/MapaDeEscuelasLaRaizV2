@@ -1,0 +1,16 @@
+{
+  "name": "Mapa de Escuelas La Ra\u00edz",
+  "short_name": "MapaLaRa\u00edz",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "lang": "es-AR",
+  "icons": [
+    {
+      "src": "logo.jfif",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ]
+}

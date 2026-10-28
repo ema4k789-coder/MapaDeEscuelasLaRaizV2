@@ -15,7 +15,7 @@
   .popup-volver-btn,
   button.popup-volver-btn {
     position: absolute !important;
-    bottom: 2px !important;
+    bottom: 12px !important;
     left: 12px !important;
     background: red !important;
     color: white !important;
